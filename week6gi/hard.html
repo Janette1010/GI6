@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom Manipulation Hard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        button {
+            padding: 10px;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="backgroundColor('bg-red')">
+        Turn it red!
+    </button>
+    <button onclick="backgroundColor('bg-white')">
+        Turn it white!
+    </button>
+    <script>
+        // Do Stuff Here
+        // Idk if this is the right way but its the only way I was able to understand ...
+        window.backgroundColor = function (className) {
+            console.log('buttonclick');
+            console.log(className);
+            let element = document.getElementsByTagName("body")[0];
+            element.classList.remove('bg-white', 'bg-red');
+            element.classList.add(className);
+            console.log(element);
+            console.log()
+        }
+    </script>
+</body>
+
+</html>
